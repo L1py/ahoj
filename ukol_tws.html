@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWS</title>
+
+
+
+    <style>
+        :root {
+            --yellow: #e0e843;
+        }
+
+
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: .2s linear;
+        }
+
+
+
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+            scroll-padding-top: 6rem;
+            overflow-x: hidden;
+        }
+
+
+
+
+        section {
+            padding: 2rem 9%;
+        }
+
+
+
+
+        .heading {
+            text-align: center;
+            font-size: 4rem;
+            color: #333;
+            padding: 1rem;
+            margin: 2rem 0;
+
+
+
+
+        }
+
+
+
+
+        .heading span {
+            color: var(--yellow);
+        }
+
+
+
+
+        .btn:hover {
+            background: var(--yellow);
+        }
+
+
+
+
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 2rem 9%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 1);
+        }
+
+
+
+
+
+        header .navbar a {
+            font-size: 2rem;
+            padding: 0 1.5rem;
+            color: rgb(40, 21, 255);
+        }
+
+
+
+
+        header .navbar a:hover {
+            color: rgb(218, 34, 156);
+        }
+
+
+
+
+        header #toggler {
+            display: none;
+
+
+
+
+        }
+
+
+
+
+        .home {
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            background: url(https://img.freepik.com/fotos-premium/processador-na-placa-de-circuito-do-computador-com-microchips-generative-ai_788189-81.jpg?w=2000) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+
+
+
+        .home .content {
+            max-width: 50rem;
+        }
+
+
+
+
+        .home .content h3 {
+            font-size: 6rem;
+            color: rgb(255, 0, 0);
+        }
+
+
+
+
+        .home .content span {
+            font-size: 3.5rem;
+            color: var(--yellow);
+            padding: 1rem 0;
+            line-height: 1.5;
+        }
+
+
+
+
+
+
+        .cotoje .row {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+            padding-bottom: 3rem;
+        }
+
+
+
+        .cotoje .row .container22 {
+            flex: 1 1 40rem;
+            position: relative;
+        }
+
+
+        .cotoje .row .content {
+            flex: 1 1 40rem;
+        }
+
+
+
+
+        .cotoje .row .content h3 {
+            font-size: 3rem;
+            color: #333;
+        }
+
+
+
+        .cotoje .row .content p {
+            font-size: 1.5rem;
+            color: rgb(0, 0, 0);
+            padding: .5rem 0;
+            padding-top: 1rem;
+            line-height: 1.5;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .typy .row {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+            padding-bottom: 3rem;
+        }
+
+
+
+        .typy .row .container22 {
+            flex: 1 1 40rem;
+            position: relative;
+        }
+
+
+        .typy .row .content {
+            flex: 1 1 40rem;
+        }
+
+
+
+
+        .typy .row .content h3 {
+            font-size: 3rem;
+            color: #333;
+        }
+
+
+
+        .typy.row .content p {
+            font-size: 1.5rem;
+            color: rgb(0, 0, 0);
+            padding: .5rem 0;
+            padding-top: 1rem;
+            line-height: 1.5;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .home .content p {
+            font-size: 1.5rem;
+            color: #999;
+            padding: 1rem 0;
+            line-height: 1.5;
+        }
+
+
+        h4 {
+            color: rgb(55, 189, 37);
+        }
+
+
+
+
+        .sloty .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+
+
+
+        .sloty .box-container .box {
+            flex: 1 1 30rem;
+            box-shadow: 0 5rem 1.5rem rgba(0, 0, 0, .1);
+            border-radius: .5rem;
+            padding: 3rem 2rem;
+            position: relative;
+            border: .1rem solid rgba(0, 0, 0, .1);
+        }
+
+
+
+
+        .sloty .box-container .box .fa-quote-right {
+            position: absolute;
+            bottom: 3rem;
+            right: 3rem;
+            font-size: 6rem;
+            color: #eee;
+        }
+
+
+
+        .sloty .box-container .box .stars i {
+            color: var(--pink);
+            font-size: 2rem;
+        }
+
+
+        .sloty .box-container .box p {
+            color: #999;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            padding-top: 2rem;
+        }
+
+
+        .sloty .box-container .box .user {
+            display: flex;
+            align-items: center;
+            padding-top: 2rem;
+        }
+
+
+
+        .sloty .box-container .box .user img {
+            height: 6rem;
+            width: 6rem;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+
+
+        .sloty .box-container .box .user h3 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+
+
+        .sloty .box-container .box .user span {
+            font-size: 1.5rem;
+            color: #999;
+        }
+
+
+        .popis .row {
+
+
+
+
+            display: flex;
+            flex-wrap: wrap-reverse;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+
+        .popis .row .ahoj {
+            flex: 40 4 50rem;
+            padding: 2rem 2.5rem;
+            box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+            border: .1rem solid rgba(0, 0, 0, .1);
+            background: #fff;
+            border-radius: .5rem;
+        }
+
+
+
+
+        .popis .row .image {
+            flex: 12 1 40rem;
+        }
+
+        .popis .row .image img {
+            width: 80%;
+        }
+
+
+
+        .popis .row .ahoj .box {
+            padding: 1rem;
+            font-size: 1.7rem;
+            color: #333;
+            text-transform: none;
+            border: 1rem solid rgba(0, 0, 0, .1);
+            border-radius: .5rem;
+            margin: .7rem 0;
+            width: 100%;
+        }
+
+
+
+        .popis .row .ahoj .box:focus {
+            border-color: var(--yellow);
+        }
+
+        .popis .row .ahoj textarea {
+            height: 15rem;
+            resize: none;
+        }
+
+
+
+        body {
+            line-height: 1.5;
+            font-family: 'Poppins', sans-serif;
+            background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1LY4dwdXmZPGWDiGHF7dsyyMmJ7775f_vhw&usqp=CAU) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        .container {
+            max-width: 1170px;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+
+
+
+        ul {
+            list-style: none;
+        }
+
+
+
+        header .fa-bars {
+            font-size: 3rem;
+            color: #333;
+            border-radius: .5rem;
+            padding: .5rem 1.5rem;
+            cursor: pointer;
+            border: .1rem solid rgba(0, 0, 0, .3);
+            display: none;
+        }
+
+
+
+
+
+
+
+
+
+        @media (max-width:991px) {
+
+
+
+
+
+
+
+
+            html {
+                font-size: 55%;
+            }
+
+
+
+
+            header {
+                padding: 2rem;
+            }
+
+
+
+
+            section {
+                padding: 2rem;
+            }
+
+
+
+
+            .home {
+                background-position: left;
+            }
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+        @media (max-width:768px) {
+
+
+
+
+            html .fa-bars {
+                display: block;
+            }
+
+
+
+
+            header .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #eee;
+                border-top: .1rem solid rgba(0, 0, 0, .1);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+
+
+
+            }
+
+
+
+
+            header #toggler:checked~.navbar {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+
+
+
+            }
+
+
+
+
+            header .navbar a {
+                margin: 1.5rem;
+                padding: 1.5rem;
+                background: #fff;
+                border: .1rem solid rgba(0, 0, 0, .1);
+                display: block;
+            }
+        }
+
+
+
+
+
+
+
+
+        .home .content h3 {
+            font-size: 5rem;
+        }
+
+
+
+
+        .home .content span {
+            font-size: 2.5rem;
+        }
+
+
+        @media (max-width:450px) {
+
+
+
+
+            html {
+                font-size: 50%;
+            }
+        }
+    </style>
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body>
+
+
+    <!-- 1111111111111111111 -->
+    <header>
+
+
+
+
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+
+
+
+
+        <nav class="navbar">
+            <a href="#home">domů</a>
+            <a href="#cotoje">co to je</a>
+            <a href="#slouzi">k čemu slouží</a>
+            <a href="#sloty">podpůrné obvody+popis </a>
+            <a href="#typy">Typy základních desek</a>
+            <a href="#popis">rozšiřující sloty & konektory</a>
+
+
+
+
+
+        </nav>
+
+
+    </header>
+
+
+
+    <!-- 1111111111111111111  -->
+
+
+
+
+
+
+    <!-- 22222222222222222 -->
+
+
+
+    <section class="home" id="home">
+
+
+
+
+        <div class="content">
+
+
+
+
+            <h3>Základní deska</h3>
+            <span>tomáš lipavský</span>
+
+
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+    <!-- 22222222222222222-->
+
+
+
+
+    <!-- 33333333333333333-->
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="cotoje" id="cotoje">
+
+
+        <h1 class="heading"> <span> co to </span> je</h1>
+
+
+
+
+
+
+
+
+        <div class="row">
+
+
+
+
+            <div class="container22">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52G20-mtPfxxLfV-5-pYUA25xg0T40Re9X1KSDrxw7-BGfWrwfkCSKhb1xMgOJ-iUQZo&usqp=CAU">
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+            <div class="content">
+
+
+
+
+                <h3>Co to je základní deska?</h3>
+                <p><strong>Základní deska</strong> patří mezi klíčové prvky každé počítačové sestavy. Funguje totiž jako
+                    mozek, přes který proudí informace do jednotlivých komponentů v podobě procesoru, operační paměti
+                    RAM nebo grafické karty. Také je klíčem pro možné budoucí rozšíření funkcí nebo připojení dalšího
+                    příslušenství.</p>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+    <!-- 33333333333333333 -->
+
+
+
+
+
+
+    <!-- 4444444444444444-->
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="slouzi" id="slouzi">
+
+
+
+
+        <h1 class="heading">k čemu <span>slouží</span></h1>
+
+        <br>
+        <h2>K čemu slouží základní deska? Hlavní funkcí základní desky je propojit jednotlivé komponenty do fungujícího
+            celku a poskytnout jim stabilní elektrické napájení.</h2>
+        <br>
+        <h2> To se na první pohled může zdát jako jednoduchá
+            záležitost, ale opak je pravdou. Vybrat kvalitní základní desku tak, aby obsloužila vás vysněný počítač,
+            není žádná legrace.</h2>
+        <br>
+        <h2> I ta nejobyčejnější základní deska, kterou však pro svůj vysněný herní počítač fakt
+            nechcete, se skládá z mnoha důležitých součástí. Mezi ně řadíme například formát základní desky, typ
+            procesorové patice, čipovou sadu nebo interní a externí konektory.</h2>
+        <br>
+        <h2> Samozřejmě nesmíme zapomenout ani na
+            celou řadu tlačítek, pinů nebo na typickou knoflíkovou baterii.</h2>
+
+
+
+
+        <br>
+        <br>
+        <br>
+
+
+
+
+        <!-- 4444444444444444-->
+
+
+
+
+
+
+
+
+        <!-- 555555555555555 -->
+
+
+
+
+        <section class="sloty" id="sloty">
+
+
+
+
+            <h1 class="heading"> <span>velikost základní desky</span> +její uspořádání</h1>
+
+
+
+
+
+          <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Motherboards_form_factors.svg/700px-Motherboards_form_factors.svg.png" width="50%"></center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+        <br>
+        <br>
+        <br>
+
+
+
+
+        <!-- 555555555555555 -->
+
+
+
+
+
+        <!-- 66666666666666 -->
+
+
+
+
+        <section class="typy" id="typy">
+
+
+            <h1 class="heading"> <span> typy základních</span> desek</h1>
+
+
+
+
+
+
+
+
+            <div class="row">
+
+
+
+
+                <div class="container22">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNA9Yssons1lY9h12C6MpK4FOhqZr8vqjFRQ&usqp=CAU">
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+                <div class="content">
+
+
+
+
+                    <h3>eatx</h3>
+                    <p><strong>Extended ATX</strong>, zkráceňě <strong>eATX, </strong>je formát základní desky s rozměry 305*330 mm. <strong>eATX</strong> má větší rozměry
+                        než běžné <strong>ATX </strong>desky.<strong> eATX </strong>je určen pro výkonné počítače, které potřebují mnoho rozšířujících
+                        slotů. <strong>eATX</strong> využívají především profesionální a herní počítače</p>
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+            <div class="row">
+
+
+
+
+                <div class="container22">
+                    <img
+                        src="data:image/jpeg;base64,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">
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+                <div class="content">
+
+
+
+
+                    <h3>atx</h3>
+                    <p><strong>ATX</strong> je formát základí desky s rozměry 305 * 244 mm. <strong>ATX</strong> je nejrozšířenější
+                        formát základních
+                        desek. <strong>ATX</strong> desky mají větší počet slotů než menší formáty.<strong> ATX </strong>desky josu vhodné pro výkonné a
+                        herní počítače.<strong>ATX</strong> desky bývají kompatibilní s většinou počítačových komponentů.</p>
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+            <div class="row">
+
+
+
+
+                <div class="container22">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyXGCQsn_g2qVr_CcVgt2nL1khwDV0q2hKixxwdn96Y7ZZaKPWwk8o8_gduToXRp8WSbk&usqp=CAU">
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+                <div class="content">
+
+
+
+
+                    <h3>mini-atx</h3>
+                    <p><strong>Mini-ATX, zkráceně mATX,</strong> je formát základní desky s rozměry 244 * 244 mm.
+                        <strong>mATX</strong> má menší rozměry než běžné <strong>ATX</strong>desky. <strong>mATX
+                        </strong>desky mají menší počet rozšiřujících slotů než <strong>ATX</strong>desky.
+                        <strong>mATX</strong>desky jsou vhodné pro menší počítačové skříně. <strong>mATX</strong>desky
+                        bývají cenově dostupnější než <strong>ATX</strong>desky
+                    </p>
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+            <div class="row">
+
+
+
+
+                <div class="container22">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyXGCQsn_g2qVr_CcVgt2nL1khwDV0q2hKixxwdn96Y7ZZaKPWwk8o8_gduToXRp8WSbk&usqp=CAU">
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+                <div class="content">
+
+
+
+
+                    <h3>micro-atx</h3>
+                    <p><strong>micro-ATX </strong>desky jsou kompatibilní s většinou počítačovýh komponentů.
+                        <strong>micro-ATX</strong>desky bývají vhodné pro vykonné a herní počítače.
+                        <strong>micor-ATX</strong>desky jsou výhodné pro uživatele, kteří chtějí menší počítačovou
+                        skříň. <strong>micro-ATX</strong>desky bývají často využívány v počítačovýchsestavách pro
+                        kancelářské účely. <strong>micro-ATX</strong>desky mají menší spotřebu energie než
+                        <strong>ATX</strong>desky.</p>
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- 66666666666666 -->
+
+
+
+
+
+
+
+        <!-- 77777777777777 -->
+
+
+
+
+        <section class="popis" id="popis">
+
+            <h1 class="heading"><span> rozšířující sloty & </span>konektory</h1>
+
+
+            <div class="row">
+
+
+
+
+                <div class="ahoj">
+                    <h4>Rozšiřující sloty umožňují připojit k počítači další zařízení. Postupem času se vyvinul velký
+                        počet druhů. Odlišují se zejména přenosovými rychlostmi a schopnostmi napájet připojená
+                        zařízení.</h4>
+
+
+
+
+                    <p><strong>ISA</strong> Dnes již nepoužívané. Dřív se používala pro připojení třeba grafických
+                        karet (v té
+                        době 2D akcelerátorů), zvukových karet a dalších.</p>
+                    <p> <strong> EISA</strong> Dnes již nepoužívané. Rozšíření ISA slotu.</p>
+                    <p> <strong> VESA</strong> Dnes již nepoužívané. Určeno pro grafické karty.</p>
+                    <p> <strong>PCI</strong> Dříve běžně používaný slot pro všechny rozšiřující karty, později už
+                        nestačil
+                        požadavkům grafických karet. V současnosti je nahrazen PCI Express slotem.</p>
+                    <p> <strong>AGP</strong> Slot navržen speciálně pro grafické karty. Je výrazně rychlejší než PCI,
+                        v roce 2009
+                        již začal zaostávat (Socket A, Socket 478…). Stejně jako PCI sloty byl nahrazen sloty PCI
+                        Express.</p>
+                    <p> <strong> PCI-Express</strong> <strong>Nástupce PCI a AGP.</strong> Funguje jako univerzální
+                        sběrnice pro připojení
+                        jakéhokoliv standardního typu přídavných karet (grafické, zvukové, síťové, střihové a další
+                        karty). Dosahuje mnohem vyšších přenosových rychlostí než předchůdci. Zařízení určená pro
+                        <strong> PCI Express</strong> nejsou zpětně kompatibilní s žádným předchozím slotem (AGP, PCI,
+                        …). Existuje
+                        několik variant od sebe se lišící délkou a rychlostí přenosu.
+                    </p>
+
+
+
+
+
+
+                    <p>Běžně používané konektory je možné dělit na:</p>
+
+
+
+
+                    <h4> interní nachází se na ploše základní desky a připojovaná zařízení obvykle uvnitř počítačové
+                        skříně</h4>
+                    </p>
+                    <p> IDE</p>
+                    <p>SATA</p>
+                    <p> FLOPPY</p>
+                    <p>M.2</p>
+                    <p> napájecí konektory</p>
+                    <p> konektory pro připojení ventilátorů</p>
+                    <p> konektory zvukové karty</p>
+                    <p> rozšiřující konektory USB a FireWire</p>
+                    <p> konektory k připojení kabelů od předního krytu</p>
+                    <p> indikační LED diody (zapnuto, HDD)</p>
+                    <p> USB konektor</p>
+                    <p> eSATA konektor</p>
+                    <p> Firewire (IEEE 1394)</p>
+                    <h4> externí se nachází na zadním panelu základní desky</h4>
+                    <p> USB</p>
+                    <p> PS/2</p>
+                    <p> FireWire</p>
+                    <p> eSATA</p>
+                    <p> COM</p>
+                    <p> LPT</p>
+                    <p> D-SUB = VGA</p>
+                    <p> DVI</p>
+                    <p> HDMI</p>
+                    <p> konektory zvukové karty</p>
+                    <p> LAN</p>
+                </div>
+
+
+
+
+                <div class="image">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/ASUS_P5Q-EM_back_panel.jpg/320px-ASUS_P5Q-EM_back_panel.jpg">
+                </div>
+
+
+            </div>
+
+
+
+
+        </section>
+
+
+
+
+        <!-- 77777777777777 -->
+
+
+
+</body>
+
+
+
+
+</html>
